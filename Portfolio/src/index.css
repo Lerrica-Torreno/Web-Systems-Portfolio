@@ -1,11 +1,10 @@
-/* Remove the browser's default spacing */
+/* Remove browser defaults */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Make the page use the full browser width and height */
 html,
 body,
 #root {
@@ -14,15 +13,36 @@ body,
   min-height: 100%;
 }
 
-/* Main page styling */
-body {
-  margin: 0;
-  background-color: #f8fbfd;
-  font-family: Arial, Helvetica, sans-serif;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
 
-/* Make the React application occupy the full page */
+body {
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f7fafc;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
 #root {
   width: 100%;
   min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }

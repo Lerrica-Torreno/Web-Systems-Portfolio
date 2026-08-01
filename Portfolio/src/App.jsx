@@ -1,30 +1,33 @@
-// Import the reusable components
+// Reusable components
 import Header from "./components/Header";
 import ProjectCard from "./components/ProjectCard";
 
-// Import the stylesheet
+// Main application stylesheet
 import "./App.css";
 
-function App() {
-  // Portfolio owner information. Passed to Header as props. 
-  const personalInfo = {
-    name: "Lerrica Torreno",
-    shortName: "LT",
-    role: "Computer Science Student",
-    introduction:
-      "I am exploring web development, data analytics, SAP technologies, and systems administration while building practical technical skills through projects and continuous learning.",
-    email: "lerricatorreno007@gmail.com",
-    location: "Philippines",
-    github: "https://github.com/Lerrica-Torreno",
-    linkedin: "https://www.linkedin.com/in/lerrica-jeremy-torreno-555a462a9/",
-    credly: "https://www.credly.com/users/lerrica-torreno",
-  };
+/* =========================================================
+   PERSONAL INFORMATION
+   ========================================================= */
 
-  /*
-    Skills are stored in an array so they can be displayed
-    dynamically using the map() method.
-  */
-  const skillGroups = [
+const personalInfo = {
+  name: "Lerrica Torreno",
+  shortName: "LT",
+  role: "Computer Science Student",
+  introduction:
+    "I am exploring web development, data analytics, SAP technologies, and systems administration while building practical technical skills through projects and continuous learning.",
+  email: "lerricatorreno007@gmail.com",
+  location: "Philippines",
+  github: "https://github.com/Lerrica-Torreno",
+  linkedin:
+    "https://www.linkedin.com/in/lerrica-jeremy-torreno-555a462a9/",
+  credly: "https://www.credly.com/users/lerrica-torreno",
+};
+
+/* =========================================================
+   SKILLS
+   ========================================================= */
+
+const skillGroups = [
   {
     id: 1,
     title: "Programming & Querying",
@@ -55,12 +58,7 @@ function App() {
   {
     id: 4,
     title: "Systems & Cloud Infrastructure",
-    skills: [
-      "Linux",
-      "Windows",
-      "Cloud Computing",
-      "Virtualization",
-    ],
+    skills: ["Linux", "Windows", "Cloud Computing", "Virtualization"],
   },
   {
     id: 5,
@@ -70,15 +68,19 @@ function App() {
   {
     id: 6,
     title: "Productivity & Workplace",
-    skills: ["Digital safety", "Collaboration", "Digital Productivity", "Documentation"],
+    skills: [
+      "Digital Safety",
+      "Collaboration",
+      "Digital Productivity",
+      "Documentation",
+    ],
   },
-  ];
+];
 
-  /*
-  Certification data.
+/* =========================================================
+   CERTIFICATIONS
+   ========================================================= */
 
-  Add, remove, or edit certifications here.
-*/
 const certifications = [
   {
     id: 1,
@@ -86,9 +88,7 @@ const certifications = [
     issuer: "Certiport",
     year: "2024",
     description:
-      `validates essential competency in operating digital devices and navigating online environments. 
-      It demonstrates proficiency in basic document creation, digital communication, online collaboration, 
-      and information sourcing, alongside a foundational understanding of digital citizenship, safety, and security.`,
+      "Validates essential competency in operating digital devices and navigating online environments. It demonstrates proficiency in basic document creation, digital communication, online collaboration, information sourcing, digital citizenship, safety, and security.",
     link: "https://www.credly.com/badges/70582307-3ca0-4e08-a168-c1edbed7c20c/public_url",
   },
   {
@@ -97,20 +97,16 @@ const certifications = [
     issuer: "Certiport",
     year: "2024",
     description:
-      `Demonstrates core proficiency in networking fundamentals, including TCP/IP protocols, network topologies, 
-      and architecture. Covers configuring and troubleshooting wired and wireless network services to ensure 
-      reliable system connectivity and performance..`,
+      "Demonstrates core proficiency in networking fundamentals, including TCP/IP protocols, network topologies, and architecture. Covers configuring and troubleshooting wired and wireless network services to support reliable connectivity and performance.",
     link: "https://www.credly.com/badges/c5004ef1-5c61-4e25-948d-f77bda804e88/public_url",
   },
   {
     id: 3,
-    title: "Introduction to Ceybersecurity",
+    title: "Introduction to Cybersecurity",
     issuer: "Cisco Networking Academy",
     year: "2025",
     description:
-      `Demonstrates foundational knowledge of the global cybersecurity landscape, including threat detection, 
-      defense strategies, and system vulnerabilities. Validates an understanding of core security principles 
-      required to protect organizational assets and navigate modern cyber risk environments.`,
+      "Demonstrates foundational knowledge of the global cybersecurity landscape, including threat detection, defense strategies, and system vulnerabilities. Validates an understanding of security principles used to protect organizational assets.",
     link: "https://www.credly.com/badges/c525af24-2820-4077-9933-81ca0a43d036/public_url",
   },
   {
@@ -119,9 +115,7 @@ const certifications = [
     issuer: "Cisco Networking Academy",
     year: "2025",
     description:
-      `Demonstrates core proficiency in operating system architecture, basic security implementations, 
-      and device configuration. Validates practical skills in managing mobile network connectivity, configuring 
-      email services, and understanding the core characteristics and functions of modern OS environments.`,
+      "Demonstrates core proficiency in operating system architecture, basic security implementation, and device configuration. Validates practical skills in mobile connectivity, email services, and modern operating system environments.",
     link: "https://www.credly.com/badges/676c94bc-4c13-4060-b0d4-9e439579a783/public_url",
   },
   {
@@ -130,9 +124,7 @@ const certifications = [
     issuer: "Cisco Networking Academy",
     year: "2025",
     description:
-      `Demonstrates hands-on proficiency in Linux system administration across 24 practical lab environments. 
-      Validates key skills in command-line navigation, file management, user and group permission management, 
-      system security, automated shell scripting, and hardware architecture.`,
+      "Demonstrates hands-on proficiency in Linux system administration through practical lab environments. Covers command-line navigation, file management, permissions, system security, shell scripting, and hardware architecture.",
     link: "https://www.credly.com/badges/2d534c0f-9c95-47bd-bcc4-9e1f31a5e42a/public_url",
   },
   {
@@ -141,9 +133,7 @@ const certifications = [
     issuer: "IBM SkillsBuild",
     year: "2025",
     description:
-      `Demonstrates core proficiency in cloud architecture, service models (IaaS, PaaS, SaaS), deployment 
-      environments, and cloud security protocols. Covers hands-on concepts including container creation, 
-      web app cloud deployment, virtualization, orchestration, and threat analysis in simulated environments.`,
+      "Demonstrates knowledge of cloud architecture, service models, deployment environments, virtualization, orchestration, and cloud security. Includes concepts related to containers, web application deployment, and threat analysis.",
     link: "https://www.credly.com/badges/fc25d9bc-35e7-443b-8c26-c0a1849be632/public_url",
   },
   {
@@ -152,9 +142,7 @@ const certifications = [
     issuer: "IBM SkillsBuild",
     year: "2025",
     description:
-      `Demonstrates foundational knowledge of data analytics methodologies, data science applications, and ecosystem tools. 
-      Validates practical competency in cleaning, refining, and visualizing datasets using IBM Watson Studio, 
-      alongside core data lifecycle concepts.`,
+      "Demonstrates foundational knowledge of data analytics methodologies, data science applications, and ecosystem tools. Includes practical experience in cleaning, refining, and visualizing datasets using IBM Watson Studio.",
     link: "https://www.credly.com/badges/f5e91b5c-f648-468b-9053-ab7ae69a83f8/public_url",
   },
   {
@@ -163,9 +151,7 @@ const certifications = [
     issuer: "Cisco",
     year: "2025",
     description:
-      `Validates end-to-end data analytics capabilities, including data acquisition, transformation, and statistical analysis. 
-      Demonstrates hands-on proficiency using industry-standard tools—Excel, SQL, and Tableau—to clean datasets, perform exploratory 
-      analysis, and build visual dashboards that extract actionable business insights.`,
+      "Validates data acquisition, transformation, statistical analysis, and visualization skills. Demonstrates practical experience using Excel, SQL, and Tableau to clean datasets and build informative dashboards.",
     link: "https://www.credly.com/badges/4a32fe36-421e-4fc9-b3c8-224253090c1e/public_url",
   },
   {
@@ -174,9 +160,7 @@ const certifications = [
     issuer: "Certiport",
     year: "2026",
     description:
-      `Demonstrates proficiency in writing, reading, and debugging Python code to solve complex logic problems. 
-      Validates a strong foundation in core programming concepts, data structures, control flow, and clean 
-      code practices essential for software development and automation.`,
+      "Demonstrates proficiency in writing, reading, and debugging Python code. Validates a foundation in programming concepts, data structures, control flow, problem-solving, and clean coding practices.",
     link: "https://www.credly.com/badges/b2030220-c0df-4a83-9c69-6be5e866fed2/public_url",
   },
   {
@@ -185,73 +169,214 @@ const certifications = [
     issuer: "DataCamp",
     year: "2026",
     description:
-      `Demonstrates proficiency in core SQL concepts for database querying, data extraction, and relational database management. 
-      Validates practical capabilities in writing efficient queries, filtering and aggregating datasets, and analyzing results 
-      to support data-driven decision-making.`,
+      "Demonstrates proficiency in SQL concepts for database querying, data extraction, and relational database management. Includes filtering, aggregation, and analysis for data-driven decision-making.",
     link: "https://www.datacamp.com/completed/statement-of-accomplishment/track/a4bc873fccb53b1f01e5e291f6f23f004be4efd6?utm_medium=organic_social&utm_campaign=sharewidget&utm_content=soa",
+  },
+  {
+    id: 11,
+    title: "Introduction to Shell",
+    issuer: "DataCamp",
+    year: "In Progress",
+    description:
+      "Developing foundational knowledge of Unix command-line interfaces, shell navigation, process management, task automation, remote system access, and pipeline scripting.",
+    link: "#",
+  },
+  {
+    id: 12,
+    title: "Understanding Microsoft Azure",
+    issuer: "DataCamp",
+    year: "In Progress",
+    description:
+      "Developing foundational knowledge of Microsoft Azure services, including compute, storage, networking, security, cloud-resource management, and scalable application deployment.",
+    link: "#",
   },
 ];
 
-  /*
-    Project data.
+/* =========================================================
+   PROJECTS
+   ========================================================= */
 
-    Each object is passed to ProjectCard as props.
-    You can add more projects by creating another object.
-  */
- 
-  const projects = [
-    {
-      id: 1,
-      title: "Personal Portfolio Website",
-      category: "Web Development",
-      description:
-        "A responsive personal portfolio that presents my background, technical skills, projects, and contact information.",
-      technologies: ["React", "JavaScript", "CSS"],
-      link: "https://github.com/yourusername/Portfolio-Web-Systems",
-      liveLink: "#",
-      featured: true,
-    },
-    {
-      id: 2,
-      title: "LUMI",
-      category: "Capstone Project",
-      description:
-        "A data-driven environmental intelligence system designed to support renewable-energy decisions through recommendations, forecasting, maps, and simulations.",
-      technologies: ["Python", "FastAPI", "JavaScript", "SQL"],
-      link: "#",
-      liveLink: "#",
-      featured: true,
-    },
-    {
-      id: 3,
-      title: "JuanMart Sales Dashboard",
-      category: "Data Analytics",
-      description:
-        "A sales analytics dashboard that displays revenue, orders, regional performance, data quality results, and business insights.",
-      technologies: ["Python", "Pandas", "SQLite", "Data Visualization"],
-      link: "#",
-      liveLink: "#",
-      featured: false,
-    },
-    {
-      id: 4,
-      title: "Renewable Energy Information System",
-      category: "Web Application",
-      description:
-        "A web-based application that helps users review energy information, compare renewable-energy options, and understand environmental conditions.",
-      technologies: ["HTML", "CSS", "JavaScript", "Python"],
-      link: "#",
-      liveLink: "#",
-      featured: false,
-    },
-  ];
+const projects = [
+  {
+    id: 1,
+    title: "Job Application Tracker",
+    category: "Web Development",
+    status: "Planned Project",
+    description:
+      "A web application for organizing job applications, tracking application status, deadlines, company details, and interview progress.",
+    technologies: ["React", "JavaScript", "CSS", "Local Storage"],
+    link: "#",
+    liveLink: "#",
+    featured: true,
+  },
+  {
+    id: 2,
+    title: "Foreign Students’ Mental Health Data Analysis",
+    category: "Data Analytics",
+    status: "Completed Project",
+    description:
+      "An analysis of factors affecting the mental health of foreign students, including academic pressure, social connection, and length of stay.",
+    technologies: ["Python", "Pandas", "Matplotlib", "Data Analysis"],
+    link: "https://github.com/Lerrica-Torreno/Project-1-Foreign-Students-Mental-Health-Data-Analysis.git",
+    liveLink: "#",
+    featured: true,
+  },
+  {
+    id: 3,
+    title: "Sales Performance Dashboard",
+    category: "Data Analytics",
+    status: "Planned Project",
+    description:
+      "An interactive dashboard that presents revenue, sales trends, regional performance, product performance, and business insights.",
+    technologies: ["Power BI", "Excel", "Data Visualization", "Data Cleaning"],
+    link: "#",
+    liveLink: "#",
+    featured: true,
+  },
+  {
+    id: 4,
+    title: "Procure-to-Pay Process Simulation",
+    category: "SAP",
+    status: "Planned Project",
+    description:
+      "A simulation of the SAP procure-to-pay process covering purchase requisitions, purchase orders, goods receipts, invoices, and payments.",
+    technologies: ["SAP", "ERP Concepts", "Business Processes"],
+    link: "#",
+    liveLink: "#",
+    featured: true,
+  },
+  {
+    id: 5,
+    title: "Windows Server Active Directory Home Lab",
+    category: "Systems Administration",
+    status: "Planned Project",
+    description:
+      "A virtualized Windows Server lab demonstrating Active Directory, domain configuration, user management, group policies, and client connectivity.",
+    technologies: [
+      "Windows Server",
+      "Active Directory",
+      "VirtualBox",
+      "Networking",
+    ],
+    link: "#",
+    liveLink: "#",
+    featured: true,
+  },
+  {
+    id: 6,
+    title: "Customer Churn Prediction",
+    category: "Artificial Intelligence",
+    status: "Completed Project",
+    description:
+      "A machine-learning project that predicts whether customers are likely to leave a service based on behavioral and account-related data.",
+    technologies: ["Python", "Pandas", "Scikit-learn", "Machine Learning"],
+    link: "https://github.com/Lerrica-Torreno/Customer-Churn-Prediction.git",
+    liveLink: "#",
+    featured: true,
+  },
+  {
+    id: 7,
+    title: "Personal Portfolio Website",
+    category: "Web Development",
+    status: "In Progress",
+    description:
+      "A responsive portfolio website presenting my background, skills, certifications, projects, and contact information.",
+    technologies: ["React", "JavaScript", "CSS"],
+    link: "https://github.com/Lerrica-Torreno/Web-Systems-Portfolio.git",
+    liveLink: "#",
+    featured: false,
+  },
+  {
+    id: 8,
+    title: "Whistledown Personal Library",
+    category: "Web Development",
+    status: "Completed Project",
+    description:
+      "A personal library interface for organizing, browsing, and managing book-related information.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    link: "https://github.com/Lerrica-Torreno/Whistledown-Personal-Library.git",
+    liveLink: "#",
+    featured: false,
+  },
+  {
+    id: 9,
+    title: "Basic Association Analysis",
+    category: "Data Analytics",
+    status: "Completed Project",
+    description:
+      "A data-mining project that identifies relationships and frequently occurring combinations within a dataset.",
+    technologies: ["Python", "Pandas", "Association Rules"],
+    link: "https://github.com/Lerrica-Torreno/Basic-Association-Analysis.git",
+    liveLink: "#",
+    featured: false,
+  },
+  {
+    id: 10,
+    title: "SAP S/4HANA Implementation Case Study",
+    category: "SAP",
+    status: "Planned Project",
+    description:
+      "A case study examining SAP S/4HANA implementation planning, business requirements, migration considerations, and expected outcomes.",
+    technologies: ["SAP S/4HANA", "ERP", "Business Analysis"],
+    link: "#",
+    liveLink: "#",
+    featured: false,
+  },
+  {
+    id: 11,
+    title: "Automated System Health Monitor",
+    category: "Systems Administration",
+    status: "Planned Project",
+    description:
+      "A monitoring script that checks important system-health indicators such as CPU usage, memory consumption, disk space, and service availability.",
+    technologies: ["Python", "Bash", "Linux", "Automation"],
+    link: "#",
+    liveLink: "#",
+    featured: false,
+  },
+  {
+    id: 12,
+    title: "Billbot",
+    category: "Artificial Intelligence",
+    status: "Completed Project",
+    description:
+      "An Ollama-powered chatbot designed to respond to user questions through a locally hosted language model.",
+    technologies: ["Python", "Ollama", "Artificial Intelligence"],
+    link: "https://github.com/Lerrica-Torreno/Billbot.git",
+    liveLink: "#",
+    featured: false,
+  },
+  {
+    id: 13,
+    title: "Customer Sentiment Analysis",
+    category: "Artificial Intelligence",
+    status: "Completed Project",
+    description:
+      "A natural-language-processing project that classifies customer text as positive, negative, or neutral.",
+    technologies: ["Python", "NLP", "Machine Learning"],
+    link: "https://github.com/Lerrica-Torreno/Customer-Sentiment-Analysis.git",
+    liveLink: "#",
+    featured: false,
+  },
+];
+
+/* Separate highlighted projects from the remaining projects. */
+const featuredProjects = projects.filter((project) => project.featured);
+const moreProjects = projects.filter((project) => !project.featured);
+
+/* =========================================================
+   MAIN APPLICATION COMPONENT
+   ========================================================= */
+
+function App() {
+  const gmailComposeUrl =
+    `https://mail.google.com/mail/?view=cm&fs=1` +
+    `&to=${encodeURIComponent(personalInfo.email)}` +
+    `&su=${encodeURIComponent("Portfolio Inquiry")}`;
 
   return (
     <div className="app">
-      {/*
-        Header receives data through props.
-        This makes the Header component reusable.
-      */}
+      {/* Hero and navigation */}
       <Header
         name={personalInfo.name}
         shortName={personalInfo.shortName}
@@ -260,7 +385,9 @@ const certifications = [
       />
 
       <main>
-        {/* About section */}
+        {/* ===================================================
+            ABOUT SECTION
+            =================================================== */}
         <section className="section about-section" id="about">
           <div className="section-container about-layout">
             <div className="about-heading">
@@ -273,26 +400,24 @@ const certifications = [
 
             <div className="about-content">
               <p>
-                I am a CS student who is still exploring different career paths in
-                technology, including web development, data analytics, SAP, and systems
-                administration.
+                I am a Computer Science student exploring career paths in web
+                development, data analytics, SAP, and systems administration.
               </p>
 
               <p>
-                Through academic activities and personal projects, I have gained experience
-                using tools and technologies such as React, JavaScript, Python, SQL, Git,
-                and database systems. I also enjoy learning how business systems,
+                Through academic activities and personal projects, I have
+                gained experience with React, JavaScript, Python, SQL, Git, and
+                database systems. I also enjoy learning how business systems,
                 infrastructure, and data work together.
               </p>
 
               <p>
-                My goal is to continue developing a broad technical foundation while
-                discovering which area best matches my skills and interests. I am open to
-                learning opportunities that allow me to solve practical problems and grow
-                as an IT professional.
+                My goal is to develop a broad technical foundation while
+                discovering which field best matches my skills and interests. I
+                am open to opportunities that allow me to solve practical
+                problems and grow as an IT professional.
               </p>
 
-              {/* Quick personal details */}
               <div className="personal-details">
                 <div className="detail-item">
                   <span className="detail-label">Location</span>
@@ -303,6 +428,7 @@ const certifications = [
 
                 <div className="detail-item">
                   <span className="detail-label">Email</span>
+
                   <a
                     className="detail-value detail-link"
                     href={`mailto:${personalInfo.email}`}
@@ -322,124 +448,130 @@ const certifications = [
           </div>
         </section>
 
-       {/* Skills section */}
-<section className="section skills-section" id="skills">
-  <div className="section-container">
-    {/* Skills section heading */}
-    <div className="section-heading centered-heading">
-      <p className="section-label">Technical Skills</p>
+        {/* ===================================================
+            SKILLS SECTION
+            =================================================== */}
+        <section className="section skills-section" id="skills">
+          <div className="section-container">
+            <div className="section-heading centered-heading">
+              <p className="section-label">Technical skills</p>
 
-      <h2 className="section-title">
-        Tools and technologies I use
-      </h2>
+              <h2 className="section-title">
+                Tools and technologies I use
+              </h2>
 
-      <p className="section-description">
-        My technical skills include programming, data analytics, networking,
-        cybersecurity, systems infrastructure, cloud technologies, and
-        development tools.
-      </p>
-    </div>
+              <p className="section-description">
+                My skills include programming, data analytics, networking,
+                cybersecurity, systems infrastructure, cloud technologies, and
+                development tools.
+              </p>
+            </div>
 
-    {/* Display every skill group */}
-    <div className="skill-groups-grid">
-      {skillGroups.map((group, groupIndex) => (
-        <article className="skill-group-card" key={group.id}>
-          {/* Skill group title */}
-          <div className="skill-group-header">
-            <span className="skill-group-number">
-              {String(groupIndex + 1).padStart(2, "0")}
-            </span>
+            <div className="skill-groups-grid">
+              {skillGroups.map((group, groupIndex) => (
+                <article className="skill-group-card" key={group.id}>
+                  <div className="skill-group-header">
+                    <span className="skill-group-number">
+                      {String(groupIndex + 1).padStart(2, "0")}
+                    </span>
 
-            <h3>{group.title}</h3>
+                    <h3>{group.title}</h3>
+                  </div>
+
+                  <div className="skill-group-list">
+                    {group.skills.map((skill, skillIndex) => (
+                      <div className="grouped-skill-item" key={skill}>
+                        <span className="grouped-skill-number">
+                          {String(skillIndex + 1).padStart(2, "0")}
+                        </span>
+
+                        <span className="grouped-skill-name">{skill}</span>
+                      </div>
+                    ))}
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
+        </section>
 
-          {/* Skills inside the group */}
-          <div className="skill-group-list">
-            {group.skills.map((skill, skillIndex) => (
-              <div className="grouped-skill-item" key={skill}>
-                <span className="grouped-skill-number">
-                  {String(skillIndex + 1).padStart(2, "0")}
-                </span>
-
-                <span className="grouped-skill-name">
-                  {skill}
-                </span>
-              </div>
-            ))}
-          </div>
-        </article>
-      ))}
-    </div>
-  </div>
-</section>
-
-        {/* Certifications section */}
-<section
-  className="section certifications-section"
-  id="certifications">
-  <div className="section-container">
-    <div className="section-heading centered-heading">
-      <p className="section-label">Certifications</p>
-
-      <h2 className="section-title">
-        Courses and certifications I have completed
-      </h2>
-
-      <p className="section-description">
-        These certifications represent the additional skills and knowledge I
-        have gained through online courses and technical training.
-      </p>
-    </div>
-
-    {/* Display every certification from the array */}
-    <div className="certifications-grid">
-      {certifications.map((certification) => (
-        <article
-          className="certification-card"
-          key={certification.id}
+        {/* ===================================================
+            CERTIFICATIONS SECTION
+            =================================================== */}
+        <section
+          className="section certifications-section"
+          id="certifications"
         >
-          <div className="certification-card-top">
-            <span className="certification-icon">
-              {String(certification.id).padStart(2, "0")}
-            </span>
+          <div className="section-container">
+            <div className="section-heading centered-heading">
+              <p className="section-label">Certifications</p>
 
-            <span className="certification-year">
-              {certification.year}
-            </span>
+              <h2 className="section-title">
+                Courses and certifications I have completed
+              </h2>
+
+              <p className="section-description">
+                These credentials represent the additional knowledge and
+                practical skills I have gained through technical training and
+                online learning.
+              </p>
+            </div>
+
+            <div className="certifications-grid">
+              {certifications.map((certification) => {
+                const hasCertificate =
+                  certification.link && certification.link !== "#";
+
+                return (
+                  <article
+                    className="certification-card"
+                    key={certification.id}
+                  >
+                    <div className="certification-card-top">
+                      <span className="certification-icon">
+                        {String(certification.id).padStart(2, "0")}
+                      </span>
+
+                      <span className="certification-year">
+                        {certification.year}
+                      </span>
+                    </div>
+
+                    <p className="certification-issuer">
+                      {certification.issuer}
+                    </p>
+
+                    <h3>{certification.title}</h3>
+
+                    <p className="certification-description">
+                      {certification.description}
+                    </p>
+
+                    {hasCertificate ? (
+                      <a
+                        className="certification-link"
+                        href={certification.link}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        View certificate
+                        <span aria-hidden="true">↗</span>
+                      </a>
+                    ) : (
+                      <span className="certificate-unavailable">
+                        Certificate available upon completion
+                      </span>
+                    )}
+                  </article>
+                );
+              })}
+            </div>
           </div>
+        </section>
 
-          <p className="certification-issuer">
-            {certification.issuer}
-          </p>
-
-          <h3>{certification.title}</h3>
-
-          <p className="certification-description">
-            {certification.description}
-          </p>
-
-          {certification.link !== "#" ? (
-            <a
-              className="certification-link"
-              href={certification.link}
-              target="_blank"
-              rel="noreferrer"
-            >
-              View certificate
-              <span aria-hidden="true">↗</span>
-            </a>
-          ) : (
-            <span className="certificate-unavailable">
-              Certificate link coming soon
-            </span>
-          )}
-        </article>
-      ))}
-    </div>
-  </div>
-</section>
-
-        {/* Education and experience section */}
+        {/* ===================================================
+            JOURNEY SECTION
+            =================================================== */}
         <section className="section journey-section" id="journey">
           <div className="section-container">
             <div className="section-heading">
@@ -448,15 +580,15 @@ const certifications = [
             </div>
 
             <div className="timeline">
-              {/* Education timeline item */}
               <article className="timeline-item">
                 <div className="timeline-marker" />
 
                 <div className="timeline-content">
                   <p className="timeline-date">Present</p>
                   <h3>Computer Science Student</h3>
+
                   <p className="timeline-subtitle">
-                    University of Perpetual Help System Dalta - Molino Campus
+                    University of Perpetual Help System DALTA - Molino Campus
                   </p>
 
                   <p>
@@ -467,7 +599,6 @@ const certifications = [
                 </div>
               </article>
 
-              {/* Web development timeline item */}
               <article className="timeline-item">
                 <div className="timeline-marker" />
 
@@ -480,85 +611,87 @@ const certifications = [
                   </p>
 
                   <p>
-                    Building responsive interfaces, reusable React components, and simple
-                    web applications while improving my understanding of frontend and
-                    backend development.
+                    Building responsive interfaces, reusable React components,
+                    and web applications while improving my understanding of
+                    frontend and backend development.
                   </p>
                 </div>
-            </article>
+              </article>
 
-            {/* Data analytics timeline item */}
-            <article className="timeline-item">
-              <div className="timeline-marker" />
-
-              <div className="timeline-content">
-                <p className="timeline-date">Exploring</p>
-                <h3>Data Analytics</h3>
-
-                <p className="timeline-subtitle">
-                  Python, SQL, Excel, Tableau, and Data Visualization
-                </p>
-
-                <p>
-                  Learning how to clean, organize, analyze, and present data in a clear
-                  way to support better understanding and decision-making.
-                </p>
-              </div>
-          </article>
-
-            {/* Systems administration timeline item */}
-            <article className="timeline-item">
-              <div className="timeline-marker" />
-
-              <div className="timeline-content">
-                <p className="timeline-date">Exploring</p>
-                <h3>Systems Administration</h3>
-
-                <p className="timeline-subtitle">
-                    Linux, Windows, Networking, Cloud, and Virtualization
-                </p>
-
-                <p>
-                  Developing foundational knowledge in operating systems, system
-                  configuration, user management, networking, troubleshooting, and cloud infrastructure.
-                </p>
-              </div>
-          </article>
-
-            {/* SAP timeline item */}
-            <article className="timeline-item">
-              <div className="timeline-marker" />
-
-              <div className="timeline-content">
-                <p className="timeline-date">Interested In</p>
-                <h3>SAP Technologies</h3>
-
-                <p className="timeline-subtitle">
-                    Enterprise Systems, Business Processes, and Administration
-                </p>
-
-                <p>
-                  Exploring how SAP systems support business operations and learning more
-                  about enterprise applications, system administration, and technical support.
-                </p>
-              </div>
-          </article>
-
-              {/* Project timeline item */}
               <article className="timeline-item">
                 <div className="timeline-marker" />
 
                 <div className="timeline-content">
-                  <p className="timeline-date">Academic Project | In Progress</p>
+                  <p className="timeline-date">Exploring</p>
+                  <h3>Data Analytics</h3>
+
+                  <p className="timeline-subtitle">
+                    Python, SQL, Excel, Tableau, and Data Visualization
+                  </p>
+
+                  <p>
+                    Learning how to clean, organize, analyze, and present data
+                    clearly to support understanding and decision-making.
+                  </p>
+                </div>
+              </article>
+
+              <article className="timeline-item">
+                <div className="timeline-marker" />
+
+                <div className="timeline-content">
+                  <p className="timeline-date">Exploring</p>
+                  <h3>Systems Administration</h3>
+
+                  <p className="timeline-subtitle">
+                    Linux, Windows, Networking, Cloud, and Virtualization
+                  </p>
+
+                  <p>
+                    Developing foundational knowledge in operating systems,
+                    system configuration, user management, networking,
+                    troubleshooting, and cloud infrastructure.
+                  </p>
+                </div>
+              </article>
+
+              <article className="timeline-item">
+                <div className="timeline-marker" />
+
+                <div className="timeline-content">
+                  <p className="timeline-date">Interested In</p>
+                  <h3>SAP Technologies</h3>
+
+                  <p className="timeline-subtitle">
+                    Enterprise Systems, Business Processes, and Administration
+                  </p>
+
+                  <p>
+                    Exploring how SAP systems support business operations and
+                    learning about enterprise applications, administration,
+                    and technical support.
+                  </p>
+                </div>
+              </article>
+
+              <article className="timeline-item">
+                <div className="timeline-marker" />
+
+                <div className="timeline-content">
+                  <p className="timeline-date">
+                    Academic Project | In Progress
+                  </p>
+
                   <h3>LUMI</h3>
+
                   <p className="timeline-subtitle">
                     Renewable Energy Decision Support
                   </p>
 
                   <p>
-                    Collaborating in a team environment to design and develop a web-based decision support system 
-                    for renewable energy evaluation. The platform leverages data analysis and interactive models 
-                    to streamline sustainability planning and data-driven energy assessment.
+                    Collaborating in a team to develop a web-based decision
+                    support system for renewable-energy evaluation using data
+                    analysis and interactive models.
                   </p>
                 </div>
               </article>
@@ -566,34 +699,57 @@ const certifications = [
           </div>
         </section>
 
-        {/* Projects section */}
+        {/* ===================================================
+            PROJECTS SECTION
+            =================================================== */}
         <section className="section projects-section" id="projects">
           <div className="section-container">
             <div className="section-heading project-heading">
               <div>
-                <p className="section-label">Selected projects</p>
-                <h2 className="section-title">Some things I have worked on</h2>
+                <p className="section-label">Featured projects</p>
+
+                <h2 className="section-title">
+                  Projects that best represent my skills
+                </h2>
               </div>
 
               <p className="project-heading-description">
-                These projects demonstrate my experience in web development,
-                system design, data processing, and user-interface development.
+                These selected projects demonstrate my experience in web
+                development, data analytics, SAP, systems administration, and
+                artificial intelligence.
               </p>
             </div>
 
             <div className="projects-grid">
-              {/*
-                Every project is passed to ProjectCard through props.
-                The spread operator passes all project object properties.
-              */}
-              {projects.map((project) => (
+              {featuredProjects.map((project) => (
                 <ProjectCard key={project.id} {...project} />
               ))}
+            </div>
+
+            <div className="more-projects-section">
+              <div className="more-projects-heading">
+                <p className="section-label">More projects</p>
+
+                <h3>Additional work and learning projects</h3>
+
+                <p>
+                  These projects reflect my continued learning across different
+                  areas of technology.
+                </p>
+              </div>
+
+              <div className="projects-grid">
+                {moreProjects.map((project) => (
+                  <ProjectCard key={project.id} {...project} />
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Contact section */}
+        {/* ===================================================
+            CONTACT SECTION
+            =================================================== */}
         <section className="section contact-section" id="contact">
           <div className="section-container contact-container">
             <div className="contact-content">
@@ -603,16 +759,14 @@ const certifications = [
 
               <p>
                 I am interested in learning opportunities, academic
-                collaborations, internship opportunities, and beginner-friendly
-                development projects.
+                collaborations, internships, and beginner-friendly development
+                projects.
               </p>
 
               <div className="contact-actions">
                 <a
                   className="primary-button light-button"
-                  href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
-                    personalInfo.email
-                  )}&su=${encodeURIComponent("Portfolio Inquiry")}`}
+                  href={gmailComposeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -633,25 +787,23 @@ const certifications = [
                   href={personalInfo.credly}
                   target="_blank"
                   rel="noreferrer"
-                > 
+                >
                   View Credly
                 </a>
               </div>
             </div>
 
-            {/* Contact information card */}
             <aside className="contact-card">
               <div className="contact-card-item">
                 <span>Email</span>
+
                 <a
-                  href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
-                    personalInfo.email
-                  )}&su=${encodeURIComponent("Portfolio Inquiry")}`}
+                  href={gmailComposeUrl}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                 >
                   {personalInfo.email}
-              </a>
+                </a>
               </div>
 
               <div className="contact-card-item">
@@ -661,6 +813,7 @@ const certifications = [
 
               <div className="contact-card-item">
                 <span>GitHub</span>
+
                 <a
                   href={personalInfo.github}
                   target="_blank"
@@ -672,12 +825,13 @@ const certifications = [
 
               <div className="contact-card-item">
                 <span>LinkedIn</span>
+
                 <a
                   href={personalInfo.linkedin}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  linkedin.com/in/Lerrica-Jeremy-Torreno
+                  linkedin.com/in/lerrica-jeremy-torreno
                 </a>
               </div>
             </aside>
@@ -685,19 +839,21 @@ const certifications = [
         </section>
       </main>
 
-      {/* Website footer */}
+      {/* =====================================================
+          FOOTER
+          ===================================================== */}
       <footer className="footer">
         <div className="footer-container">
           <div>
             <p className="footer-name">{personalInfo.name}</p>
-            <p className="footer-description">
-              Computer Science Student
-            </p>
+            <p className="footer-description">{personalInfo.role}</p>
           </div>
 
           <nav className="footer-links" aria-label="Footer navigation">
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#journey">Journey</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
           </nav>
