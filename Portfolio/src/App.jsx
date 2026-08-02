@@ -370,8 +370,7 @@ function App() {
       />
 
       <main>
-        {// ABOUT SECTION 
-        }
+        {/* ABOUT SECTION */}
         <section className="section about-section" id="about">
           <div className="section-container about-layout">
             <div className="about-heading">
@@ -432,8 +431,7 @@ function App() {
           </div>
         </section>
 
-        {// SKILLS SECTION
-        }
+        {/* SKILLS SECTION */}
         <section className="section skills-section" id="skills">
           <div className="section-container">
             <div className="section-heading centered-heading">
@@ -478,8 +476,7 @@ function App() {
           </div>
         </section>
 
-        {// CERTIFICATIONS SECTION
-        }
+        {/* CERTIFICATIONS SECTION */}
         <section
           className="section certifications-section"
           id="certifications"
@@ -551,8 +548,7 @@ function App() {
           </div>
         </section>
 
-        {// JOURNEY SECTION
-        }
+        {/* JOURNEY SECTION */}
         <section className="section journey-section" id="journey">
           <div className="section-container">
             <div className="section-heading">
@@ -680,8 +676,7 @@ function App() {
           </div>
         </section>
 
-        {// PROJECTS SECTION
-        }
+        {/* PROJECTS SECTION */}
         <section className="section projects-section" id="projects">
           <div className="section-container">
             <div className="section-heading project-heading">
@@ -727,8 +722,7 @@ function App() {
           </div>
         </section>
 
-        {// CONTACT SECTION
-        }
+        {/* CONTACT SECTION */}
         <section className="section contact-section" id="contact">
           <div className="section-container contact-container">
             <div className="contact-content">
@@ -818,8 +812,7 @@ function App() {
         </section>
       </main>
 
-      {// FOOTER
-      }
+      {/* FOOTER */}
       <footer className="footer">
         <div className="footer-container">
           <div>
