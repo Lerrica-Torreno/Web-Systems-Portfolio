@@ -1,7 +1,5 @@
 /*
   Header Component
-
-  Responsibilities:
   - Displays the fixed navigation bar
   - Presents the hero introduction
   - Shows the main action buttons
@@ -17,16 +15,11 @@
 // Profile image used in the hero card
 import profilePhoto from "../assets/profile.JPG";
 
-/* =========================================================
-   HEADER COMPONENT
-   ========================================================= */
-
+// HEADER COMPONENT
 function Header({ name, shortName, role, introduction }) {
   return (
     <header className="header" id="home">
-      {/* =====================================================
-          MAIN NAVIGATION
-          ===================================================== */}
+      {/* MAIN NAVIGATION */}
       <nav className="navbar" aria-label="Main navigation">
         {/* Portfolio logo */}
         <a className="logo" href="#home" aria-label="Go to homepage">
@@ -48,9 +41,7 @@ function Header({ name, shortName, role, introduction }) {
         </div>
       </nav>
 
-      {/* =====================================================
-          HERO SECTION
-          ===================================================== */}
+      {/* HERO SECTION */}
       <div className="hero section-container">
         <div className="hero-content">
           <p className="hero-greeting">Welcome to my portfolio</p>
@@ -98,9 +89,7 @@ function Header({ name, shortName, role, introduction }) {
           </div>
         </div>
 
-        {/* =====================================================
-            PROFILE CARD
-            ===================================================== */}
+        {/* Profile card */}
         <div className="hero-visual">
           <div className="profile-card simple-profile-card">
             <div className="profile-initials">

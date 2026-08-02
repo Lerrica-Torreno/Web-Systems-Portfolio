@@ -1,7 +1,5 @@
 /*
   ProjectCard Component
-
-  Responsibilities:
   - Displays project information
   - Shows the project status
   - Lists the technologies used
@@ -17,10 +15,7 @@
   - liveLink: Live project URL
 */
 
-/* =========================================================
-   PROJECT CARD COMPONENT
-   ========================================================= */
-
+// Project Card Component 
 function ProjectCard({
   title,
   category,
@@ -30,9 +25,8 @@ function ProjectCard({
   link,
   liveLink,
 }) {
-  /*
-    Links containing "#" are treated as unavailable.
-  */
+
+  // Links containing "#" are treated as unavailable.
   const hasRepository = Boolean(link && link !== "#");
   const hasLiveDemo = Boolean(liveLink && liveLink !== "#");
 
