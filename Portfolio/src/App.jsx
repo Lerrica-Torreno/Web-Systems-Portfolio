@@ -486,7 +486,7 @@ function App() {
               <p className="section-label">Certifications</p>
 
               <h2 className="section-title">
-                Courses and certifications I have completed
+                Courses and Certifications
               </h2>
 
               <p className="section-description">
@@ -584,7 +584,7 @@ function App() {
                   <h3>Web Development</h3>
 
                   <p className="timeline-subtitle">
-                    React, JavaScript, CSS, and Python
+                    React, JavaScript, CSS, HTML and Python
                   </p>
 
                   <p>
