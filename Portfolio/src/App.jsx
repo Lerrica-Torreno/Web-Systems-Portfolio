@@ -1,6 +1,16 @@
 // Reusable components
 import Header from "./components/Header";
 import ProjectCard from "./components/ProjectCard";
+import certiportLogo from "./assets/certiport-logo.png";
+import ciscoLogo from "./assets/cisco-logo.png";
+import ibmLogo from "./assets/ibm-logo.png";
+import datacampLogo from "./assets/datacamp-logo.png";
+import programmingImage from "./assets/skills/programming.png";
+import analyticsImage from "./assets/skills/analytics.png";
+import networkingImage from "./assets/skills/networking.png";
+import systemsImage from "./assets/skills/systems.png";
+import toolsImage from "./assets/skills/tools.png";
+import workplaceImage from "./assets/skills/workplace.png";
 
 // Main application stylesheet
 import "./App.css";
@@ -23,164 +33,155 @@ const personalInfo = {
 // SKILLS
 const skillGroups = [
   {
-    id: 1,
+    image: programmingImage,
     title: "Programming & Querying",
-    skills: ["Python", "SQL", "Bash", "HTML", "CSS", "JavaScript"],
+    skills: ["Python", "JavaScript", "SQL"],
   },
   {
-    id: 2,
+    image: analyticsImage,
     title: "Data Analytics & Visualization",
-    skills: [
-      "Power BI",
-      "Excel",
-      "Pandas",
-      "Data Visualization",
-      "Statistics",
-      "PostgreSQL",
-    ],
+    skills: ["Power BI", "Excel", "Pandas"],
   },
   {
-    id: 3,
+    image: networkingImage,
     title: "Networking & Security",
-    skills: [
-      "TCP/IP",
-      "Cybersecurity",
-      "Threat Detection",
-      "Network Topology",
-    ],
+    skills: ["TCP/IP", "Cybersecurity", "Network Topology"],
   },
   {
-    id: 4,
+    image: systemsImage,
     title: "Systems & Cloud Infrastructure",
-    skills: ["Linux", "Windows", "Cloud Computing", "Virtualization"],
+    skills: ["Linux", "Windows", "Cloud Computing"],
   },
   {
-    id: 5,
+    image: toolsImage,
     title: "Developer Tools",
-    skills: ["VS Code", "Git", "GitHub", "Terminal"],
+    skills: ["Git", "GitHub", "VS Code"],
   },
   {
-    id: 6,
+    image: workplaceImage,
     title: "Productivity & Workplace",
-    skills: [
-      "Digital Safety",
-      "Collaboration",
-      "Digital Productivity",
-      "Documentation",
-    ],
+    skills: ["Documentation", "Collaboration", "Digital Safety"],
   },
 ];
 
 // CERTIFICATIONS
 const certifications = [
   {
-    id: 1,
+    category: "Digital Literacy",
     title: "IC3 Digital Literacy Certification GS6 Level 1",
     issuer: "Certiport",
-    year: "2024",
+    logo: certiportLogo,
     description:
       "Validates essential competency in operating digital devices and navigating online environments. It demonstrates proficiency in basic document creation, digital communication, online collaboration, information sourcing, digital citizenship, safety, and security.",
     link: "https://www.credly.com/badges/70582307-3ca0-4e08-a168-c1edbed7c20c/public_url",
   },
   {
-    id: 2,
+    category: "Networking & Cybersecurity",
     title: "IT Specialist - Networking",
     issuer: "Certiport",
-    year: "2024",
+    logo: certiportLogo,
     description:
       "Demonstrates core proficiency in networking fundamentals, including TCP/IP protocols, network topologies, and architecture. Covers configuring and troubleshooting wired and wireless network services to support reliable connectivity and performance.",
     link: "https://www.credly.com/badges/c5004ef1-5c61-4e25-948d-f77bda804e88/public_url",
   },
   {
-    id: 3,
+    category: "Networking & Cybersecurity",
     title: "Introduction to Cybersecurity",
     issuer: "Cisco Networking Academy",
-    year: "2025",
+    logo: ciscoLogo,
     description:
       "Demonstrates foundational knowledge of the global cybersecurity landscape, including threat detection, defense strategies, and system vulnerabilities. Validates an understanding of security principles used to protect organizational assets.",
     link: "https://www.credly.com/badges/c525af24-2820-4077-9933-81ca0a43d036/public_url",
   },
   {
-    id: 4,
+    category: "Systems & Cloud",
     title: "Operating Systems Basics",
     issuer: "Cisco Networking Academy",
-    year: "2025",
+    logo: ciscoLogo,
     description:
       "Demonstrates core proficiency in operating system architecture, basic security implementation, and device configuration. Validates practical skills in mobile connectivity, email services, and modern operating system environments.",
     link: "https://www.credly.com/badges/676c94bc-4c13-4060-b0d4-9e439579a783/public_url",
   },
   {
-    id: 5,
+    category: "Systems & Cloud",
     title: "Linux Essentials",
     issuer: "Cisco Networking Academy",
-    year: "2025",
+    logo: ciscoLogo,
     description:
       "Demonstrates hands-on proficiency in Linux system administration through practical lab environments. Covers command-line navigation, file management, permissions, system security, shell scripting, and hardware architecture.",
     link: "https://www.credly.com/badges/2d534c0f-9c95-47bd-bcc4-9e1f31a5e42a/public_url",
   },
   {
-    id: 6,
+    category: "Systems & Cloud",
     title: "Cloud Computing Fundamentals",
     issuer: "IBM SkillsBuild",
-    year: "2025",
+    logo: ibmLogo,
     description:
       "Demonstrates knowledge of cloud architecture, service models, deployment environments, virtualization, orchestration, and cloud security. Includes concepts related to containers, web application deployment, and threat analysis.",
     link: "https://www.credly.com/badges/fc25d9bc-35e7-443b-8c26-c0a1849be632/public_url",
   },
   {
-    id: 7,
+    category: "Data Analytics",
     title: "Data Fundamentals",
     issuer: "IBM SkillsBuild",
-    year: "2025",
+    logo: ibmLogo,
     description:
       "Demonstrates foundational knowledge of data analytics methodologies, data science applications, and ecosystem tools. Includes practical experience in cleaning, refining, and visualizing datasets using IBM Watson Studio.",
     link: "https://www.credly.com/badges/f5e91b5c-f648-468b-9053-ab7ae69a83f8/public_url",
   },
   {
-    id: 8,
+    category: "Data Analytics",
     title: "Data Analytics Essentials",
-    issuer: "Cisco",
-    year: "2025",
+    issuer: "Cisco Networking Academy",
+    logo: ciscoLogo,
     description:
       "Validates data acquisition, transformation, statistical analysis, and visualization skills. Demonstrates practical experience using Excel, SQL, and Tableau to clean datasets and build informative dashboards.",
     link: "https://www.credly.com/badges/4a32fe36-421e-4fc9-b3c8-224253090c1e/public_url",
   },
   {
-    id: 9,
+    category: "Programming",
     title: "IT Specialist - Python",
     issuer: "Certiport",
-    year: "2026",
+    logo: certiportLogo,
     description:
       "Demonstrates proficiency in writing, reading, and debugging Python code. Validates a foundation in programming concepts, data structures, control flow, problem-solving, and clean coding practices.",
     link: "https://www.credly.com/badges/b2030220-c0df-4a83-9c69-6be5e866fed2/public_url",
   },
   {
-    id: 10,
+    category: "Data Analytics",
     title: "Associate Data Analyst",
     issuer: "DataCamp",
-    year: "2026",
+    logo: datacampLogo,
     description:
       "Demonstrates proficiency in SQL concepts for database querying, data extraction, and relational database management. Includes filtering, aggregation, and analysis for data-driven decision-making.",
     link: "https://www.datacamp.com/completed/statement-of-accomplishment/track/a4bc873fccb53b1f01e5e291f6f23f004be4efd6?utm_medium=organic_social&utm_campaign=sharewidget&utm_content=soa",
   },
   {
-    id: 11,
+    category: "Programming",
     title: "Introduction to Shell",
     issuer: "DataCamp",
-    year: "In Progress",
+    logo: datacampLogo,
     description:
       "Developing foundational knowledge of Unix command-line interfaces, shell navigation, process management, task automation, remote system access, and pipeline scripting.",
     link: "#",
   },
   {
-    id: 12,
+    category: "Systems & Cloud",
     title: "Understanding Microsoft Azure",
     issuer: "DataCamp",
-    year: "In Progress",
+    logo: datacampLogo,
     description:
       "Developing foundational knowledge of Microsoft Azure services, including compute, storage, networking, security, cloud-resource management, and scalable application deployment.",
     link: "#",
   },
+];
+
+const certificationCategories = [
+  "Digital Literacy",
+  "Programming",
+  "Data Analytics",
+  "Networking & Cybersecurity",
+  "Systems & Cloud",
 ];
 
 // PROJECTS
@@ -383,7 +384,7 @@ function App() {
 
             <div className="about-content">
               <p>
-                I am a Computer Science student exploring career paths in web
+                I am a Computer Science student based in the Philippines exploring career paths in web
                 development, data analytics, SAP, and systems administration.
               </p>
 
@@ -401,32 +402,6 @@ function App() {
                 problems and grow as an IT professional.
               </p>
 
-              <div className="personal-details">
-                <div className="detail-item">
-                  <span className="detail-label">Location</span>
-                  <span className="detail-value">
-                    {personalInfo.location}
-                  </span>
-                </div>
-
-                <div className="detail-item">
-                  <span className="detail-label">Email</span>
-
-                  <a
-                    className="detail-value detail-link"
-                    href={`mailto:${personalInfo.email}`}
-                  >
-                    {personalInfo.email}
-                  </a>
-                </div>
-
-                <div className="detail-item">
-                  <span className="detail-label">Availability</span>
-                  <span className="detail-value">
-                    Open to learning opportunities
-                  </span>
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -449,78 +424,102 @@ function App() {
             </div>
 
             <div className="skill-groups-grid">
-              {skillGroups.map((group, groupIndex) => (
-                <article className="skill-group-card" key={group.id}>
+              {skillGroups.map((group) => (
+                <article className="skill-group-card" key={group.title}>
                   <div className="skill-group-header">
-                    <span className="skill-group-number">
-                      {String(groupIndex + 1).padStart(2, "0")}
-                    </span>
-
-                    <h3>{group.title}</h3>
-                  </div>
-
-                  <div className="skill-group-list">
-                    {group.skills.map((skill, skillIndex) => (
-                      <div className="grouped-skill-item" key={skill}>
-                        <span className="grouped-skill-number">
-                          {String(skillIndex + 1).padStart(2, "0")}
-                        </span>
-
-                        <span className="grouped-skill-name">{skill}</span>
+                    <div className="skill-group-image-container">
+                      <img
+                      className="skill-group-image"
+                      src={group.image}
+                      alt={`${group.title} graphic`}
+                      />
                       </div>
-                    ))}
-                  </div>
-                </article>
-              ))}
+
+                      <h3>{group.title}</h3>
+                      </div>
+                      
+                      <div className="skill-group-list">
+                        {group.skills.map((skill) => (
+                          <div className="grouped-skill-item" key={skill}>
+                            <span className="grouped-skill-name">
+                              {skill}
+                            </span>
+                          </div>
+                          ))}
+                      </div>
+                  </article>
+                  ))}
             </div>
           </div>
         </section>
 
         {/* CERTIFICATIONS SECTION */}
-        <section
-          className="section certifications-section"
-          id="certifications"
-        >
-          <div className="section-container">
-            <div className="section-heading centered-heading">
-              <p className="section-label">Certifications</p>
+<section
+  className="section certifications-section"
+  id="certifications"
+>
+  <div className="section-container">
+    <div className="section-heading centered-heading">
+      <p className="section-label">Certifications</p>
 
-              <h2 className="section-title">
-                Courses and Certifications
-              </h2>
+      <h2 className="section-title">
+        Courses and Certifications
+      </h2>
 
-              <p className="section-description">
-                These credentials represent the additional knowledge and
-                practical skills I have gained through technical training and
-                online learning.
-              </p>
+      <p className="section-description">
+        These credentials represent the additional knowledge and
+        practical skills I have gained through technical training and
+        online learning.
+      </p>
+    </div>
+
+    <div className="certification-groups">
+      {certificationCategories.map((category) => {
+        const groupedCertifications = certifications.filter(
+          (certification) => certification.category === category
+        );
+
+        return (
+          <div className="certification-group" key={category}>
+            <div className="certification-group-heading">
+              <h3>{category}</h3>
+
+              <span>
+                {groupedCertifications.length}{" "}
+                {groupedCertifications.length === 1
+                  ? "credential"
+                  : "credentials"}
+              </span>
             </div>
 
             <div className="certifications-grid">
-              {certifications.map((certification) => {
+              {groupedCertifications.map((certification) => {
                 const hasCertificate =
-                  certification.link && certification.link !== "#";
+                  certification.link &&
+                  certification.link !== "#";
 
                 return (
                   <article
                     className="certification-card"
-                    key={certification.id}
+                    key={certification.title}
                   >
-                    <div className="certification-card-top">
-                      <span className="certification-icon">
-                        {String(certification.id).padStart(2, "0")}
-                      </span>
+                    <div className="certification-header">
+                      <div className="certification-logo-container">
+                        <img
+                          className="certification-logo"
+                          src={certification.logo}
+                          alt={`${certification.issuer} logo`}
+                        />
+                      </div>
 
-                      <span className="certification-year">
-                        {certification.year}
-                      </span>
+                      <div className="certification-heading-content">
+                        <p className="certification-issuer">
+                          {certification.issuer}
+                        </p>
+
+                        <h3>{certification.title}</h3>
+                      </div>
                     </div>
-
-                    <p className="certification-issuer">
-                      {certification.issuer}
-                    </p>
-
-                    <h3>{certification.title}</h3>
 
                     <p className="certification-description">
                       {certification.description}
@@ -546,7 +545,11 @@ function App() {
               })}
             </div>
           </div>
-        </section>
+        );
+      })}
+    </div>
+  </div>
+</section>
 
         {/* JOURNEY SECTION */}
         <section className="section journey-section" id="journey">
@@ -561,8 +564,8 @@ function App() {
                 <div className="timeline-marker" />
 
                 <div className="timeline-content">
-                  <p className="timeline-date">Present</p>
                   <h3>Computer Science Student</h3>
+                  <p className="timeline-status">Present</p>
 
                   <p className="timeline-subtitle">
                     University of Perpetual Help System DALTA - Molino Campus
@@ -580,8 +583,8 @@ function App() {
                 <div className="timeline-marker" />
 
                 <div className="timeline-content">
-                  <p className="timeline-date">Current Focus</p>
                   <h3>Web Development</h3>
+                  <p className="timeline-status">Current Focus</p>
 
                   <p className="timeline-subtitle">
                     React, JavaScript, CSS, HTML and Python
@@ -599,8 +602,9 @@ function App() {
                 <div className="timeline-marker" />
 
                 <div className="timeline-content">
-                  <p className="timeline-date">Exploring</p>
                   <h3>Data Analytics</h3>
+                  <p className="timeline-status">Exploring</p>
+
 
                   <p className="timeline-subtitle">
                     Python, SQL, Excel, Tableau, and Data Visualization
@@ -617,8 +621,8 @@ function App() {
                 <div className="timeline-marker" />
 
                 <div className="timeline-content">
-                  <p className="timeline-date">Exploring</p>
                   <h3>Systems Administration</h3>
+                  <p className="timeline-status">Exploring</p>
 
                   <p className="timeline-subtitle">
                     Linux, Windows, Networking, Cloud, and Virtualization
@@ -636,8 +640,8 @@ function App() {
                 <div className="timeline-marker" />
 
                 <div className="timeline-content">
-                  <p className="timeline-date">Interested In</p>
                   <h3>SAP Technologies</h3>
+                  <p className="timeline-status">Interested In</p>
 
                   <p className="timeline-subtitle">
                     Enterprise Systems, Business Processes, and Administration
@@ -655,11 +659,8 @@ function App() {
                 <div className="timeline-marker" />
 
                 <div className="timeline-content">
-                  <p className="timeline-date">
-                    Academic Project | In Progress
-                  </p>
-
                   <h3>LUMI</h3>
+                  <p className="timeline-status"> Academic Project · In Progress</p>
 
                   <p className="timeline-subtitle">
                     Renewable Energy Decision Support
