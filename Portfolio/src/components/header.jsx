@@ -12,22 +12,27 @@
   - introduction: Short introductory description
 */
 
-// Profile image used in the hero card
+// Profile image stored inside src/assets
 import profilePhoto from "../assets/profile.JPG";
 
 // HEADER COMPONENT
-function Header({ name, shortName, role, introduction }) {
+function Header({ name, role, introduction }) {
   return (
     <header className="header" id="home">
       {/* MAIN NAVIGATION */}
       <nav className="navbar" aria-label="Main navigation">
-        {/* Portfolio logo */}
+        {/* Portfolio brand */}
         <a className="logo" href="#home" aria-label="Go to homepage">
-          <span className="logo-symbol">{shortName}</span>
-          <span className="logo-name">MyPortfolio</span>
+          <img
+            className="logo-image"
+            src="/favicon.svg"
+            alt="Lerrica Torreno logo"
+          />
+
+          <span className="logo-name">Lerrica</span>
         </a>
 
-        {/* Navigation links */}
+        {/* Navigation links and CV button */}
         <div className="nav-links">
           <a href="#home">Home</a>
           <a href="#about">About</a>
@@ -35,8 +40,18 @@ function Header({ name, shortName, role, introduction }) {
           <a href="#certifications">Certifications</a>
           <a href="#journey">Journey</a>
           <a href="#projects">Projects</a>
+
           <a className="nav-contact-link" href="#contact">
             Contact
+          </a>
+
+          <a
+            className="nav-cv-link"
+            href="/Lerrica-Torreno-CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View CV
           </a>
         </div>
       </nav>
@@ -53,62 +68,16 @@ function Header({ name, shortName, role, introduction }) {
           <h2>{role}</h2>
 
           <p className="hero-description">{introduction}</p>
-
-          {/* Main action buttons */}
-          <div className="hero-actions">
-            <a className="primary-button" href="#projects">
-              View Projects
-            </a>
-
-            <a className="secondary-button" href="#contact">
-              Contact Me
-            </a>
-
-            <a
-              className="secondary-button cv-button"
-              href="/Lerrica-Torreno-CV.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View CV
-            </a>
-          </div>
-
-          {/* Highlighted technologies */}
-          <div className="hero-technologies">
-            <span>Technologies</span>
-
-            <div>
-              <strong>HTML</strong>
-              <strong>Python</strong>
-              <strong>SQL</strong>
-              <strong>Power BI</strong>
-              <strong>Cloud</strong>
-              <strong>Networking</strong>
-            </div>
-          </div>
         </div>
 
-        {/* Profile card */}
+        {/* Profile image */}
         <div className="hero-visual">
-          <div className="profile-card simple-profile-card">
-            <div className="profile-initials">
-              <img
-                src={profilePhoto}
-                alt={`${name} profile portrait`}
-              />
-            </div>
-
-            <div className="profile-card-content">
-              <p>{name}</p>
-              <span>{role}</span>
-            </div>
-
-            <div className="simple-profile-details">
-              <p>Based in the Philippines</p>
-              <p>Exploring multiple areas of technology</p>
-              <p>Open to learning opportunities</p>
-            </div>
+          <div className="profile-card profile-photo-card">
+            <img
+              className="profile-card-image"
+              src={profilePhoto}
+              alt={`${name} profile portrait`}
+            />
           </div>
         </div>
       </div>
