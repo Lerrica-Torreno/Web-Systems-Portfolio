@@ -1,85 +1,254 @@
-/*
-  Header Component
-  - Displays the fixed navigation bar
-  - Presents the hero introduction
-  - Shows the main action buttons
-  - Displays the profile card
+import { useEffect, useState } from "react";
 
-  Props received from App.jsx:
-  - name: Portfolio owner's full name
-  - shortName: Initials used in the logo
-  - role: Current role or professional title
-  - introduction: Short introductory description
-*/
+import "./Header.css";
 
-// Profile image stored inside src/assets
-import profilePhoto from "../assets/profile.JPG";
+import profileImage from "../assets/profile.png";
+import logoImage from "../assets/logo.png";
 
-// HEADER COMPONENT
-function Header({ name, role, introduction }) {
+function Header({
+  name,
+  role,
+  introduction,
+  github,
+  linkedin,
+  cv,
+}) {
+  const [navTheme, setNavTheme] = useState("dark");
+
+  useEffect(() => {
+    const sections = document.querySelectorAll(
+      "[data-nav-theme]"
+    );
+
+    const updateTheme = () => {
+      const navPosition = 90;
+
+      let currentTheme = "dark";
+
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+
+        if (
+          rect.top <= navPosition &&
+          rect.bottom > navPosition
+        ) {
+          currentTheme =
+            section.dataset.navTheme || "dark";
+        }
+      });
+
+      setNavTheme(currentTheme);
+    };
+
+    updateTheme();
+
+    window.addEventListener("scroll", updateTheme, {
+      passive: true,
+    });
+
+    window.addEventListener("resize", updateTheme);
+
+    return () => {
+      window.removeEventListener("scroll", updateTheme);
+      window.removeEventListener("resize", updateTheme);
+    };
+  }, []);
+
   return (
-    <header className="header" id="home">
-      {/* MAIN NAVIGATION */}
-      <nav className="navbar" aria-label="Main navigation">
-        {/* Portfolio brand */}
-        <a className="logo" href="#home" aria-label="Go to homepage">
-          <img
-            className="logo-image"
-            src="/favicon.svg"
-            alt="Lerrica Torreno logo"
-          />
+    <header
+      className="site-header"
+      id="top"
+      data-nav-theme="dark"
+    >
+      <div className="header-shell">
 
-          <span className="logo-name">Lerrica</span>
-        </a>
+        {/* =================================================
+            NAVIGATION
+        ================================================= */}
 
-        {/* Navigation links and CV button */}
-        <div className="nav-links">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#certifications">Certifications</a>
-          <a href="#journey">Journey</a>
-          <a href="#projects">Projects</a>
-
-          <a className="nav-contact-link" href="#contact">
-            Contact
-          </a>
-
+        <nav
+          className={`top-nav nav-${navTheme}`}
+          aria-label="Main navigation"
+        >
           <a
-            className="nav-cv-link"
-            href="/Lerrica-Torreno-CV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#top"
+            className="brand"
+            aria-label={`${name} home`}
           >
-            View CV
+            <span className="brand-badge">
+              <img
+                src={logoImage}
+                alt={`${name} logo`}
+                className="brand-logo"
+              />
+            </span>
+
+            <span className="brand-name">
+              {name}
+            </span>
           </a>
-        </div>
-      </nav>
 
-      {/* HERO SECTION */}
-      <div className="hero section-container">
-        <div className="hero-content">
-          <p className="hero-greeting">Welcome to my portfolio</p>
+          <div className="header-nav-links">
 
-          <h1>
-            Hi, I&apos;m <span>{name}</span>
-          </h1>
+            <a href="#about">
+              About
+            </a>
 
-          <h2>{role}</h2>
+            <a href="#projects">
+              Projects
+            </a>
 
-          <p className="hero-description">{introduction}</p>
-        </div>
+            <a href="#credentials">
+              Credentials
+            </a>
 
-        {/* Profile image */}
-        <div className="hero-visual">
-          <div className="profile-card profile-photo-card">
-            <img
-              className="profile-card-image"
-              src={profilePhoto}
-              alt={`${name} profile portrait`}
-            />
+            <a href="#contact">
+              Contact
+            </a>
+
           </div>
+        </nav>
+
+        {/* =================================================
+            HERO
+        ================================================= */}
+
+        <div className="hero-layout">
+
+          {/* LEFT SIDE */}
+
+          <div className="hero-copy">
+
+            <p className="hero-eyebrow">
+              Portfolio · 2026
+            </p>
+
+            <h1 className="hero-heading">
+              Hi, I&apos;m
+              <span> {name}.</span>
+            </h1>
+
+            <p className="hero-position">
+              {role}
+            </p>
+
+            <p className="hero-intro">
+              {introduction}
+            </p>
+
+            {/* HERO ACTIONS */}
+
+            <div className="hero-actions">
+
+              <a
+                className="hero-button hero-button-primary"
+                href="#projects"
+              >
+                View my work
+                <span>↓</span>
+              </a>
+
+              <a
+                className="hero-button hero-button-secondary"
+                href={cv}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View CV
+                <span>↗</span>
+              </a>
+
+              <a
+                className="hero-button hero-button-secondary"
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+                <span>↗</span>
+              </a>
+
+              <a
+                className="hero-button hero-button-secondary"
+                href={linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+                <span>↗</span>
+              </a>
+
+            </div>
+
+            {/* =================================================
+                HERO META
+            ================================================= */}
+
+            <div className="hero-meta">
+
+              <div className="hero-meta-item">
+                <span className="hero-meta-label">
+                  Focus
+                </span>
+
+                <span className="hero-meta-value">
+                  Web · Data · IT
+                </span>
+              </div>
+
+              <div className="hero-meta-item">
+                <span className="hero-meta-label">
+                  Status
+                </span>
+
+                <span className="available-text">
+                  <i />
+                  Open to internships
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* =================================================
+              PROFILE IMAGE
+          ================================================= */}
+
+          <div className="hero-visual">
+
+            <div className="hero-photo-background" />
+
+            <div className="hero-image-frame">
+
+              <img
+                src={profileImage}
+                alt={`${name}`}
+                className="hero-profile-image"
+              />
+
+              <div className="hero-image-number">
+                01
+              </div>
+
+            </div>
+
+            <div className="hero-photo-caption">
+
+              <span>
+                Computer Science
+              </span>
+
+              <span>
+                Philippines
+              </span>
+
+            </div>
+
+          </div>
+
         </div>
+
       </div>
     </header>
   );
